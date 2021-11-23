@@ -1,2 +1,2 @@
 # ClassYou
-Front End Project with react JS
+An Online learning platform for Hybrid School
