@@ -1,22 +1,54 @@
-import ClassCuricullum from './components/class_curicullum';
-import ClassHeader from './components/class_header';
-import Header from "./components/header"
-import ModuleItem from './components/module_item';
-import ModuleList from './components/module_list';
+import ClassCuricullum from '../components/class_curicullum';
+import ClassHeader from '../components/class_header';
+import Header from "../components/header"
+import ModuleList from '../components/module_list';
+import {
+    useQuery,
+    gql,
+    useLazyQuery,
+    useMutation
+  } from "@apollo/client";
+  import { useParams } from 'react-router-dom';
+
+const QUERY_CLASS = gql`
+query MyQuery($id: uuid_comparison_exp = {}) {
+    classyou_classes(where: {id: $id}) {
+      description
+      id
+      image
+      meeting_link
+      price
+      schedule
+      subject
+      title
+      modules {
+        description
+        id
+        title
+      }
+    }
+  }
+`;
 
 export default function ClassDetail(){
+    const  param  = useParams()
+    console.log("[useparam id]",param, param.id)
+    const { loading, error, data } = useQuery(QUERY_CLASS,{variables:{id:{"_eq": param.id}}});
     return(
     <>
     <Header/>
-      <ClassHeader/>
+    { (loading) ? 
+                    (<h1>loading...</h1>):
+                 error ? (<h1>error...</h1>):
+      (<><ClassHeader
+        data={data?.classyou_classes}
+      />
       <ClassCuricullum>
-        <ModuleList>
-          <ModuleItem/>
-          <ModuleItem/>
-          <ModuleItem/>
-          <ModuleItem/>
-        </ModuleList>
-      </ClassCuricullum>
+        <ModuleList
+            data={data?.classyou_classes}
+        />
+      </ClassCuricullum></>
+      )}
       </>
     );
 };

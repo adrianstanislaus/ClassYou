@@ -2,7 +2,7 @@ import Cta_teacher from "./cta_teacher";
 
 export default function ClassCardTeacher(){
     return(
-        <li class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <li class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl my-3">
             <div class="md:flex">
                 <div class="md:flex-shrink-0">
                 <img class="h-48 w-full object-cover md:h-full md:w-48" src="https://media-exp1.licdn.com/dms/image/C561BAQFq6G0mq1ZEqQ/company-background_10000/0/1541532451544?e=2159024400&v=beta&t=B6FDSZ2natJAEWWWkQEckB_2G6HJNWbCq1OswETikxI" alt="Man looking at item at a store"/>

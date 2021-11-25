@@ -1,25 +1,19 @@
 import './App.css';
-import ClassCuricullum from './components/class_curicullum';
-import ClassHeader from './components/class_header';
-import Header from "./components/header"
-import ModuleItem from './components/module_item';
-import ModuleList from './components/module_list';
+import { Routes, Route, Link } from "react-router-dom";
+import AdminDashboard from './pages/adminDashboard';
+import ClassAdd from './pages/classAdd';
+import ClassDetail from './pages/classDetail';
+import ClassEdit from './pages/classEdit';
+
 
 function App() {
   return (
-    <>
-      <Header/>
-      <ClassHeader/>
-      <ClassCuricullum>
-        <ModuleList>
-          <ModuleItem/>
-          <ModuleItem/>
-          <ModuleItem/>
-          <ModuleItem/>
-        </ModuleList>
-      </ClassCuricullum>
-    </>
-      
+  <Routes>
+    <Route path="admin/dashboard" element={<AdminDashboard />} />
+    <Route path="admin/add" element={<ClassAdd/>} />
+    <Route path="admin/class/:id/edit" element={<ClassEdit/>} />
+    <Route path="admin/class/:id" element={<ClassDetail/>} />
+  </Routes>
   );
 }
 

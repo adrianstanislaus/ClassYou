@@ -1,9 +1,15 @@
-export default function TeacherClassess({children}){
+import ClassCardTeacher from "./classcard_teacher";
+
+export default function TeacherClassess(props){
     return(
         <div>
             <h3>Classess You Teach</h3>
             <ul>
-              {children}
+            {props.data?.map((item)=>(
+                <ClassCardTeacher
+                    key={item.id}
+                    data={item}
+            />))}
             </ul>
         </div>
     );

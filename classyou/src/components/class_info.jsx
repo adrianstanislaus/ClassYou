@@ -1,34 +1,35 @@
-export default function ClassInfo(){
+import Cta_teacher from "./cta_teacher";
+
+export default function ClassInfo(props){
+
+    const { id, description, image, meeting_link, price, schedule, subject, title} = props.data
+
     return(
-        <form>
-            <div>
-            <p>Class Title</p>
-            <input type="text" className="border" placeholder="Class Title" name="ClassTitle" />
-            </div>
-            <div>
-            <p>Description</p>
-            <input type="text" className="border" placeholder="Description" name="Description" />
-            </div>
-            <div>
-            <p>Class price</p>
-            <input type="text" className="border" placeholder="Class Price" name="ClassPrice" />
-            </div>
-            <div>
-            <p>Title Image</p>
-            <input type="text" className="border" placeholder="Title Image" name="TitleImage" />
-            </div>
-            <div>
-            <p>Class Meeting-Link</p>
-            <input type="text" className="border" placeholder="Class Title" name="ClassLink" />
-            </div>
-            <div>
-            <p>Class Schedule</p>
-            <input type="text" className="border" placeholder="Class Title" name="ClassSchedule" />
-            </div>
-            <div>
-            <p>Class Subject</p>
-            <input type="text" className="border" placeholder="Class Title" name="ClassSubject" />
-            </div>
-        </form>
+        <div className="grid md:grid-cols-2">
+        <thumbnail className="border">
+            <img className="h-48 w-full object-cover md:h-full" src={image}/>
+        </thumbnail>
+        <classdesc className="border p-14 font-mono">
+            <subhead>
+            {subject}
+            </subhead>
+            <headtitle className="block font-bold text-2xl mt-1">
+             {title}
+            </headtitle>
+            <subtitle className="block text-sm mt-1">
+            Instructor: Chef Owo
+            </subtitle>
+            <ratings className="block mt-1">
+            4.7/5
+            </ratings>
+            <schedule className="block font-semibold mt-1">
+            {schedule}
+            </schedule>
+            <description className="block font-extralight mt-5">
+            <p>{description}</p>
+            </description>
+            <Cta_teacher/>
+        </classdesc>
+    </div>
     );
 };

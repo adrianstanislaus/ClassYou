@@ -1,29 +1,12 @@
+import ClassInfo from "./class_info";
 import Cta_teacher from "./cta_teacher";
 
-export default function ClassHeader(){
+export default function ClassHeader(props){
     return(
-        <div className="grid md:grid-cols-2">
-            <thumbnail className="border">
-                <img className="h-48 w-full object-cover md:h-full" src="https://media-exp1.licdn.com/dms/image/C561BAQFq6G0mq1ZEqQ/company-background_10000/0/1541532451544?e=2159024400&v=beta&t=B6FDSZ2natJAEWWWkQEckB_2G6HJNWbCq1OswETikxI"/>
-            </thumbnail>
-            <classdesc className="border p-14 font-mono">
-                <headtitle className="block font-bold text-2xl mt-1">
-                 Cooking 101
-                </headtitle>
-                <subtitle className="block text-sm mt-1">
-                Instructor: Chef Owo
-                </subtitle>
-                <ratings className="block mt-1">
-                4.7/5
-                </ratings>
-                <schedule className="block font-semibold mt-1">
-                Every Friday 16.00 - 19.00
-                </schedule>
-                <description className="block font-extralight mt-5">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit lobortis tempus ipsum porttitor eget scelerisque tellus. </p>
-                </description>
-                <Cta_teacher/>
-            </classdesc>
+        <div>
+            <ClassInfo
+            data={props.data[0]}
+            />
         </div>
     );
 }
