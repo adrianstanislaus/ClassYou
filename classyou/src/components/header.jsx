@@ -1,7 +1,5 @@
-import Logo from "./logo";
-import Menu from "./menu";
 import Navbar from "./navbar";
-import User from "./user";
+
 
 export default function Header(){
     return (

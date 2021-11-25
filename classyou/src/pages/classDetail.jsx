@@ -1,14 +1,13 @@
-import './App.css';
 import ClassCuricullum from './components/class_curicullum';
 import ClassHeader from './components/class_header';
 import Header from "./components/header"
 import ModuleItem from './components/module_item';
 import ModuleList from './components/module_list';
 
-function App() {
-  return (
+export default function ClassDetail(){
+    return(
     <>
-      <Header/>
+    <Header/>
       <ClassHeader/>
       <ClassCuricullum>
         <ModuleList>
@@ -18,9 +17,6 @@ function App() {
           <ModuleItem/>
         </ModuleList>
       </ClassCuricullum>
-    </>
-      
-  );
-}
-
-export default App;
+      </>
+    );
+};

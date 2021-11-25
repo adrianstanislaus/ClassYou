@@ -1,3 +1,5 @@
+import Cta_teacher from "./cta_teacher";
+
 export default function ClassHeader(){
     return(
         <div className="grid md:grid-cols-2">
@@ -20,11 +22,7 @@ export default function ClassHeader(){
                 <description className="block font-extralight mt-5">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit lobortis tempus ipsum porttitor eget scelerisque tellus. </p>
                 </description>
-                <cta className="flex space-x-2 mt-5 justify-end">
-                    <button className="border p-2">Link to meet</button>
-                    <button className="border p-2">Edit</button>
-                    <button className="border p-2">Delete</button>
-                </cta>
+                <Cta_teacher/>
             </classdesc>
         </div>
     );
