@@ -1,4 +1,4 @@
-export default function ClassInfo(){
+export default function ClassInfoForm(){
     return(
         <form>
             <div>

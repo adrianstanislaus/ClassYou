@@ -1,6 +1,6 @@
 export default function ModuleInput() {
     return(
-    <div>
+    <form>
         <div className="border">
             <p>Module Title</p>
             <input type="text" className="border" name="ModuleTitleInput"/>
@@ -12,6 +12,6 @@ export default function ModuleInput() {
         <div>
             <button>Add Module</button>
         </div>     
-    </div>
+    </form>
     )
 };
