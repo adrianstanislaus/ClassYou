@@ -1,7 +1,7 @@
 export default function Logo(){
     return (
-        <logo className="col-span-1 border ">
-            <p className="border font-semibold">ClassYou</p>  
+        <logo className="col-span-1">
+            <p className="font-semibold md:text-xl">ClassYou</p>  
        </logo>
     );
 }
