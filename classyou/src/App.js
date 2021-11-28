@@ -10,8 +10,9 @@ function App() {
   return (
   <Routes>
     <Route path="admin/dashboard" element={<AdminDashboard />} />
-    <Route path="admin/add" element={<ClassAdd/>} />
-    <Route path="admin/class/:id/edit" element={<ClassEdit/>} />
+    <Route exact path="admin/class/create" element={<ClassAdd/>} />
+    <Route path="admin/class/:id/editinfo" element={<ClassEdit/>} />
+    <Route path="admin/class/:id/editmodules" element={<ClassEdit/>} />
     <Route path="admin/class/:id" element={<ClassDetail/>} />
   </Routes>
   );

@@ -8,7 +8,7 @@ export default function ClassCardTeacher(props){
         <li class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl my-3">
             <div class="md:flex">
                 <div class="md:flex-shrink-0">
-                <img class="h-48 w-full object-cover md:h-full md:w-48" src={image} alt="Man looking at item at a store"/>
+                <img class="h-48 w-full object-cover md:h-full md:w-48" src={image} alt="title image"/>
                 </div>
                 <div class="p-8">
                 <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{subject}</div>
@@ -19,6 +19,7 @@ export default function ClassCardTeacher(props){
                 <div>
                 <Cta_teacher
                     link={props.data?.meeting_link}
+                    id={props.data?.id}
                 />
                 </div>
             </div>

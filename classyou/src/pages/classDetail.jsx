@@ -5,10 +5,9 @@ import ModuleList from '../components/module_list';
 import {
     useQuery,
     gql,
-    useLazyQuery,
-    useMutation
   } from "@apollo/client";
-  import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
 
 const QUERY_CLASS = gql`
 query MyQuery($id: uuid_comparison_exp = {}) {
@@ -49,6 +48,7 @@ export default function ClassDetail(){
         />
       </ClassCuricullum></>
       )}
+      
       </>
     );
 };

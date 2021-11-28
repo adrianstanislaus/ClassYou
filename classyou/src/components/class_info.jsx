@@ -28,7 +28,10 @@ export default function ClassInfo(props){
             <description className="block font-extralight mt-5">
             <p>{description}</p>
             </description>
-            <Cta_teacher/>
+            <Cta_teacher
+                link={props.data?.meeting_link}
+                id={props.data?.id}
+            />
         </classdesc>
     </div>
     );
