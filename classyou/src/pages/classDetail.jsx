@@ -58,7 +58,7 @@ export default function ClassDetail(){
       />
       <ClassCuricullum>
         <ModuleList
-            data={data?.classyou_classes}
+            data={data?.classyou_classes[0].modules}
         />
       </ClassCuricullum></>
       )}

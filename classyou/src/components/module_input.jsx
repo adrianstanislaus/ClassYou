@@ -10,7 +10,7 @@ export default function ModuleInput() {
             <input type="text" className="border" name="ModuleDescriptionInput"/>
         </div>
         <div>
-            <button>Add Module</button>
+            <button type="submit">Add Module</button>
         </div>     
     </form>
     )
