@@ -7,6 +7,8 @@ export default function ModuleList(props){
                 <ModuleItem
                     key={item.id}
                     data={item}
+                    editModule={props.editModule}
+                    deleteModule={props.deleteModule}
             />))}
         </ul>
     );

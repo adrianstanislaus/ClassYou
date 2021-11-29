@@ -13,7 +13,7 @@ export default function UserLogout(){
     };
 
     return(
-        <div>
+        <div className='mx-2'>
             <GoogleLogout
             clientId={clientId}
             buttonText="Sign Out"

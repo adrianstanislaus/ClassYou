@@ -34,7 +34,6 @@ export default function ClassInfoForm(props){
 });
 
     const onChange = (e) => {
-        console.log(e);
         setData({
           ...data,
           [e.target.name]: e.target.value,

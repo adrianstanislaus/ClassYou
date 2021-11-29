@@ -1,6 +1,5 @@
 import Header from "../components/header";
 import User from "../components/user";
-import UserLogout from "../components/userLogout";
 
 export default function LandingPage(){
     return(
