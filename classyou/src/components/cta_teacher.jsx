@@ -11,7 +11,10 @@ export default function Cta_teacher(props){
         <cta className="flex space-x-2 m-3 justify-end align-bottom">
                     <button onClick={() => meetClicked()} className="border p-2 text-white bg-blue-500">Join Meet</button>
                     <button onClick={() => navigate(`/admin/class/${props.id}/editinfo`)} className="border p-2  text-white bg-gray-500">Edit</button>
-                    <Modal/>
+                    <Modal
+                    deleteClass={props.deleteClass}
+                    id={props.id}
+                    />
         </cta>
     );
 };

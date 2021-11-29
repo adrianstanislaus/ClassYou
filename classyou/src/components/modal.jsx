@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
 
-export default function Modal() {
+export default function Modal(props) {
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate()
   return (
     <>
       <button
@@ -36,7 +38,7 @@ export default function Modal() {
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
-                    Are you sure you want to delete this class? after deleted you can't restore it.
+                    Are you sure you want to delete this class ? after deleted you can't restore it.
                   </p>
                 </div>
                 {/*footer*/}
@@ -44,7 +46,13 @@ export default function Modal() {
                   <button
                     className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => {
+                      setShowModal(false)
+                      props.deleteClass(props.id)
+                      navigate(`/admin/dashboard`)
+                    }
+                      
+                    }
                   >
                     Yes, delete this class.
                   </button>

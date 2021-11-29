@@ -9,6 +9,7 @@ export default function TeacherClassess(props){
                 <ClassCardTeacher
                     key={item.id}
                     data={item}
+                    deleteClass={props.deleteClass}
             />))}
             </ul>
         </div>

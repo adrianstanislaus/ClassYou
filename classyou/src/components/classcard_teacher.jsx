@@ -20,6 +20,7 @@ export default function ClassCardTeacher(props){
                 <Cta_teacher
                     link={props.data?.meeting_link}
                     id={props.data?.id}
+                    deleteClass={props.deleteClass}
                 />
                 </div>
             </div>
