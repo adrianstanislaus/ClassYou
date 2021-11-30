@@ -3,11 +3,15 @@ import User from "../components/user";
 
 export default function LandingPage(){
     return(
-        <div>
+        <div className="bg-yellow-300 h-screen">
             <Header/>
-            <div class="container mx-auto my-11">
-                <h1>Create the right class, for you.</h1>
+            <div class="p-10 py-48 max-w-xl mx-auto">
+                <h1 className="font-spacemono font-extrabold subpixel-antialiased text-5xl max-w-lg">You do the teach, we handle the class.</h1>
+                <div className="mt-10 flex justify-center bg-white rounded-3xl border-2 border-black max-w-lg">
+                <div className="font-roboto font-medium pt-3 mx-3">Sign In for teachers:</div>
                 <User/>
+                </div>
+                
             </div>
         </div>
     )

@@ -49,6 +49,7 @@ export default function ClassDetail(){
     return(
     <>
     <Header/>
+    <div className='pt-16'>
     { (loading || loadingDelete) ? 
                     (<h1>loading...</h1>):
                  (error || errorDelete) ? (<h1>error...</h1>):
@@ -62,7 +63,7 @@ export default function ClassDetail(){
         />
       </ClassCuricullum></>
       )}
-      
+      </div>
       </>
     );
 };

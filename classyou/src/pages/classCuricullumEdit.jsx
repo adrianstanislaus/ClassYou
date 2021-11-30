@@ -7,6 +7,7 @@ import {
   } from "@apollo/client";
 import ModuleInput from "../components/module_input";
 import { useParams } from 'react-router-dom';
+import ClassCuricullum from "../components/class_curicullum";
 
   const QUERY_MODULES_BY_CLASS_ID = gql`
   query MyQuery($class_id: uuid_comparison_exp = {}) {
@@ -64,18 +65,21 @@ export default function ClassModuleEdit(){
     return(
         <>
         <Header/>
+        <div className="pt-16">
         {(loading || loadingInsert || loadingUpdate) ? 
                     (<h1>loading...</h1>):
                  (error || errorInsert || errorUpdate) ? (<h1>error...</h1>):
-        (<ModuleList
+        (<ClassCuricullum>
+        <ModuleList
             data={data?.classyou_modules}
             editModule={editModule}
             deleteModule={deleteModule}
-        />)}
+        /> </ClassCuricullum>)}
         <ModuleInput
             createModule={createModule}
             class_id={param.id}
         />
+        </div>
         </>
     );
 };

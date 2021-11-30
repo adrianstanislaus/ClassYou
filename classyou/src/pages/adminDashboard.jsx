@@ -38,14 +38,16 @@ export default function AdminDashboard(){
     return(
         <>
         <Header/>
+        <div className="pt-16">
         <TeacherDasboardTitle/>
         { (loading || loadingDelete) ? 
-                    (<h1>loading...</h1>):
+                    (<div class="loader">Loading...</div>):
                  (error || errorDelete) ? (<h1>error...</h1>):
         (<TeacherClassess
             data={data?.classyou_classes}
             deleteClass={deleteClass}
         />)}
+        </div>
         </>
     );
 };

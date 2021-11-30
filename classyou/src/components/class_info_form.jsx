@@ -199,53 +199,53 @@ export default function ClassInfoForm(props){
     if (props.data !== undefined){
         isInserted = props.data
         let direct = isInserted.id
-        navigate(`/admin/class/${direct}`)
+        navigate(`/admin/class/${direct}/editmodules`)
     }
     console.log(isInserted?.id)
     },[props.data])
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form className="p-20 space-y-3" onSubmit={handleSubmit}>
             <div>
-                <h2>Class Info</h2>
+                <h2 className="text-lg font-semibold font-spacemono">Class Info</h2>
             </div>
             <div>
-            <p>Class Title</p>
-            <input id="title" type="text" className="border" placeholder="Class Title" name="title" value={data.title} onChange={onChange} onBlur={onBlurTitle}/>
+            <p className="font-semibold font-roboto">Class Title</p>
+            <input id="title" type="text" className="border-2 border-black p-1 w-full" placeholder="Class Title" name="title" value={data.title} onChange={onChange} onBlur={onBlurTitle}/>
             <span id="titlehelper" class="block text-xs text-red-700">{errorMessage.title}</span>
             </div>
             <div>
-            <p>Class Description</p>
-            <textarea id="description" type="text" className="border" placeholder="Description" name="description" value={data.description} onChange={onChange} onBlur={onBlurDescription}></textarea>
+            <p className="font-semibold font-roboto">Class Description</p>
+            <textarea id="description" type="text" className="border-2 border-black p-1 w-full" placeholder="Description" name="description" value={data.description} onChange={onChange} onBlur={onBlurDescription}></textarea>
             <span id="descriptionhelper" class="block text-xs text-red-700">{errorMessage.description}</span>
             </div>
             <div>
-            <p>Class Price</p>
-            <input id="price" type="text" className="border" placeholder="Class Price" name="price" value={data.price} onChange={onChange} onBlur={onBlurPrice}/>
+            <p className="font-semibold font-roboto">Class Price</p>
+            <input id="price" type="text" className="border-2 border-black p-1 w-full" placeholder="Class Price" name="price" value={data.price} onChange={onChange} onBlur={onBlurPrice}/>
             <span id="pricehelper" class="block text-xs text-red-700">{errorMessage.price}</span>
             </div>
             <div>
-            <p>Title Image</p>
-            <input id="image" type="text" className="border" placeholder="Title Image" name="image" value={data.image} onChange={onChange} onBlur={onBlurImage}/>
+            <p className="font-semibold font-roboto">Title Image</p>
+            <input id="image" type="text" className="border-2 border-black p-1 w-full" placeholder="Title Image" name="image" value={data.image} onChange={onChange} onBlur={onBlurImage}/>
             <span id="imagehelper" class="block text-xs text-red-700">{errorMessage.image}</span>
             </div>
             <div>
-            <p>Class Meeting-Link</p>
-            <input id="link" type="text" className="border" placeholder="Class link" name="meeting_link" value={data.meeting_link} onChange={onChange} onBlur={onBlurLink}/>
+            <p className="font-semibold font-roboto">Class Meeting-Link</p>
+            <input id="link" type="text" className="border-2 border-black p-1 w-full" placeholder="Class link" name="meeting_link" value={data.meeting_link} onChange={onChange} onBlur={onBlurLink}/>
             <span id="linkhelper" class="block text-xs text-red-700">{errorMessage.meeting_link}</span>
             </div>
             <div>
-            <p>Class Schedule</p>
-            <input id="schedule" type="text" className="border" placeholder="Class schedule" name="schedule" value={data.schedule}  onChange={onChange} onBlur={onBlurSchedule}/>
+            <p className="font-semibold font-roboto">Class Schedule</p>
+            <input id="schedule" type="text" className="border-2 border-black p-1 w-full" placeholder="Class schedule" name="schedule" value={data.schedule}  onChange={onChange} onBlur={onBlurSchedule}/>
             <span id="schedulehelper" class="block text-xs text-red-700">{errorMessage.schedule}</span>
             </div>
             <div>
-            <p>Class Subject</p>
-            <input id="subject" type="text" className="border" placeholder="Class subject" name="subject" value={data.subject} onChange={onChange} onBlur={onBlurSubject}/>
+            <p className="font-semibold font-roboto">Class Subject</p>
+            <input id="subject" type="text" className="border-2 border-black p-1 w-full" placeholder="Class subject" name="subject" value={data.subject} onChange={onChange} onBlur={onBlurSubject}/>
             <span id="subjecthelper" class="block text-xs text-red-700">{errorMessage.subject}</span>
             </div>
-            <div>
-                <button type="submit">Submit</button>
+            <div className="flex justify-end">
+                <button className="text-white font-spacemono px-2 border-2 border-b-4 bg-green-500 rounded-3xl border-black transform hover:bg-green-400 hover:translate-y-0.5" type="submit">Submit</button>
             </div>
             { props.loading ? (<div>Loading</div>): props.error ? (<div>error</div>) : <></> }
         </form>
