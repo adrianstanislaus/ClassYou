@@ -10,6 +10,7 @@ export default function ModuleItem(props){
     }
     const onEdit = (e) => {
         setEditing(true)
+        setShow(true)
     }
 
     const [data, setData] = useState({
@@ -53,7 +54,7 @@ export default function ModuleItem(props){
     return(
         <li className="border-b-2 border-black">
         <div className='border-b-2 border-black p-2 font-semibold flex'>
-            {editing? <input type="text" className="" name="title" value={data.title} onChange={onChange} required/> :
+            {editing? <input type="text" className="border" name="title" value={data.title} onChange={onChange} required/> :
             <><h2>{title}</h2 >{(props.deleteModule)? (<><button className='mx-1' onClick={onEdit}>edit</button>
             <button className="mx-1" onClick={onDelete}>delete</button></>) : null
             }</>}

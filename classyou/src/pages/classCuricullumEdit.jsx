@@ -49,9 +49,9 @@ import ClassCuricullum from "../components/class_curicullum";
 export default function ClassModuleEdit(){
     const  param  = useParams()
     const { loading, error, data } = useQuery(QUERY_MODULES_BY_CLASS_ID,{variables:{class_id:{"_eq": param.id}}});
-    const [updateModule,{ data: dataUpdate, loading: loadingUpdate, error: errorUpdate }] = useMutation(UPDATE_MODULE,{refetchQueries:[QUERY_MODULES_BY_CLASS_ID],notifyOnNetworkStatusChange: true})
-    const [insertModule,{ data: dataInsert, loading: loadingInsert, error: errorInsert }] = useMutation(INSERT_MODULE,{refetchQueries:[QUERY_MODULES_BY_CLASS_ID],notifyOnNetworkStatusChange: true})
-    const [deletingModule,{ data: dataDelete, loading: loadingDelete, error: errorDelete }] = useMutation(DELETE_MODULE,{refetchQueries:[QUERY_MODULES_BY_CLASS_ID],notifyOnNetworkStatusChange: true})
+    const [updateModule,{ loading: loadingUpdate, error: errorUpdate }] = useMutation(UPDATE_MODULE,{refetchQueries:[QUERY_MODULES_BY_CLASS_ID],notifyOnNetworkStatusChange: true})
+    const [insertModule,{  loading: loadingInsert, error: errorInsert }] = useMutation(INSERT_MODULE,{refetchQueries:[QUERY_MODULES_BY_CLASS_ID],notifyOnNetworkStatusChange: true})
+    const [deletingModule,{ loading: loadingDelete, error: errorDelete }] = useMutation(DELETE_MODULE,{refetchQueries:[QUERY_MODULES_BY_CLASS_ID],notifyOnNetworkStatusChange: true})
     const deleteModule = (id) =>{
       deletingModule({variables:{id: id}}) 
   };
@@ -66,9 +66,9 @@ export default function ClassModuleEdit(){
         <>
         <Header/>
         <div className="pt-16">
-        {(loading || loadingInsert || loadingUpdate) ? 
-                    (<h1>loading...</h1>):
-                 (error || errorInsert || errorUpdate) ? (<h1>error...</h1>):
+        {(loading || loadingInsert || loadingUpdate || loadingDelete) ? 
+                    (<div class="loader">Loading...</div>):
+                 (error || errorInsert || errorUpdate || errorDelete) ? (<h1>error...</h1>):
         (<ClassCuricullum>
         <ModuleList
             data={data?.classyou_modules}

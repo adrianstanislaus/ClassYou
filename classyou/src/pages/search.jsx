@@ -22,18 +22,19 @@ query MyQuery($_iregex: String = "") {
 `;
 
 export default function SearchPage(){
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams] = useSearchParams()
     let params = searchParams.get("src")
     const { loading, error, data } = useQuery(QUERY_CLASSES_SEARCH,{variables:{_iregex: params},notifyOnNetworkStatusChange: true});
     
     const classes= {title:"Classess", teacher:false}
-    const modules= {title:"Modules", teacher:false}
     return(
         <div>
-            <Header/>
+            <Header
+            search={params}
+            />
             <div className="pt-16">
-            <div className="flex justify-center">
-                <div>Search Results</div>
+            <div className="flex justify-center border-b-2 border-black">
+                <div className="font-spacemono text-2xl font-bold my-3">Search Results</div>
             </div>
         { (loading) ? 
                     (<div class="loader">Loading...</div>):

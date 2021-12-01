@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { useNavigate, createSearchParams } from "react-router-dom";
 
-export default function Menu(){
+export default function Menu(props){
   const navigate = useNavigate()
-  const [input, setInput] = useState("");
+  let start =""
+  if (props.search){
+    start = props.search
+  }else{
+    start= ""
+  }
+
+  const [input, setInput] = useState(start);
   
 
     const onChange = (e) => {

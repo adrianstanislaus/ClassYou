@@ -10,6 +10,7 @@ mutation MyMutation($title: String = "", $description: String = "", $image: Stri
     insert_classyou_classes(objects: {title: $title, subject: $subject, schedule: $schedule, price: $price, meeting_link: $meeting_link, image: $image, description: $description}) {
       returning {
         id
+        title
       }
     }
   }`;

@@ -6,6 +6,7 @@ import {
     gql,
     useMutation
   } from "@apollo/client";
+import { useEffect } from "react";
 
 const QUERY_CLASSES = gql`
 query MyQuery($id: uuid_comparison_exp = {}) {
@@ -30,12 +31,15 @@ mutation MyMutation($id: uuid = "") {
 }`;
 
 export default function AdminDashboard(){
-    const { loading, error, data } = useQuery(QUERY_CLASSES,{notifyOnNetworkStatusChange: true});
-    const [deletingClass,{ data: dataDelete, loading: loadingDelete, error: errorDelete }] = useMutation(DELETE_CLASS,{refetchQueries:[QUERY_CLASSES],notifyOnNetworkStatusChange: true})
+    const { loading, error, data } = useQuery(QUERY_CLASSES,{fetchPolicy: "no-cache", notifyOnNetworkStatusChange: true});
+    const [deletingClass,{ loading: loadingDelete, error: errorDelete }] = useMutation(DELETE_CLASS,{refetchQueries:[QUERY_CLASSES],notifyOnNetworkStatusChange: true})
     const deleteClass = (id) =>{
       deletingClass({variables:{id: id}}) 
   };
     const user= {title: "Your Class", teacher:true}
+    useEffect(()=>{
+
+    },[data])
     return(
         <>
         <Header/>

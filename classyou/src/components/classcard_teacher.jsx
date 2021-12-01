@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 export default function ClassCardTeacher(props){
 
-    const { id, description, image, price, schedule, subject, title} = props.data
+    const { id, image, price, schedule, subject, title} = props.data
     const linkuser = "/class/"+id
     const linkadmin = "/admin/class/"+id
     return(
-        <li class="max-w-sm mx-auto bg-white border-2 border-black shadow-md overflow-hidden md:max-w-3xl lg:w-full my-3">
+        <li class="max-w-sm mx-auto bg-white border-2 border-black shadow-md overflow-hidden md:max-w-3xl lg:w-11/12 my-3 lg:mx-3">
             <div class="md:flex lg:block lg:flex-none">
                 <div class="md:flex-shrink-0 lg:flex-grow-0 border-b-2 border-black">
-                <img class="h-48 w-full object-cover md:h-full md:w-48 lg:h-48 lg:w-full" src={image} alt="title image"/>
+                <img class="h-48 w-full object-cover md:h-full md:w-48 lg:h-48 lg:w-full" src={image} alt="class preview"/>
                 </div>
                 <div class="p-8">
                 <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{subject}</div>
