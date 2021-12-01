@@ -35,6 +35,7 @@ export default function AdminDashboard(){
     const deleteClass = (id) =>{
       deletingClass({variables:{id: id}}) 
   };
+    const user= {title: "Your Class", teacher:true}
     return(
         <>
         <Header/>
@@ -44,6 +45,7 @@ export default function AdminDashboard(){
                     (<div class="loader">Loading...</div>):
                  (error || errorDelete) ? (<h1>error...</h1>):
         (<TeacherClassess
+            user={user}
             data={data?.classyou_classes}
             deleteClass={deleteClass}
         />)}

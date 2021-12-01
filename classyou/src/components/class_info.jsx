@@ -22,17 +22,19 @@ export default function ClassInfo(props){
             <ratings className="block mt-1">
             4.7/5
             </ratings>
+            {(!props.deleteClass) && <div>{price}</div>}
             <schedule className="block font-semibold mt-1">
             Every {schedule}
             </schedule>
             <description className="block font-extralight mt-5">
             <p>{description}</p>
             </description>
+            {props.deleteClass &&
             <Cta_teacher
                 link={props.data?.meeting_link}
                 id={props.data?.id}
                 deleteClass={props.deleteClass}
-            />
+            />}
         </classdesc>
     </div>
     );
