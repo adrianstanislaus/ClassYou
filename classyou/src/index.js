@@ -9,6 +9,10 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client"
+import { Auth0Provider, auth0Provider} from '@auth0/auth0-react'
+
+const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId= process.env.REACT_APP_AUTH0_CLIENT_ID;
 
 const client = new ApolloClient({
   uri: 'https://notable-meerkat-87.hasura.app/v1/graphql',
@@ -19,11 +23,17 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <React.StrictMode>
+    <Auth0Provider
+    domain={domain}
+    clientId={clientId}
+    redirectUri={windows.location.origin}
+    >
     <ApolloProvider client={client}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
     </ApolloProvider>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
