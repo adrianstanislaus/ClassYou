@@ -16,11 +16,11 @@ function App() {
     <Route path="/" element={<LandingPage/>} />
     <Route path="/search" element={<SearchPage/>} />
     <Route path="/class/:id" element={<ClassDetailAnonymous/>} />
-    <Route path="admin/dashboard" element={<AdminDashboard />} />
-    <Route exact path="admin/class/create" element={<ClassAdd/>} />
-    <Route path="admin/class/:id/editinfo" element={<ClassEdit/>} />
-    <Route path="admin/class/:id/editmodules" element={<ClassModuleEdit/>} />
-    <Route path="admin/class/:id" element={<ClassDetail/>} />
+    <Route path="/admin/dashboard" element={<AdminDashboard />} />
+    <Route exact path="/admin/class/create" element={<ClassAdd/>} />
+    <Route path="/admin/class/:id/editinfo" element={<ClassEdit/>} />
+    <Route path="/admin/class/:id/editmodules" element={<ClassModuleEdit/>} />
+    <Route path="/admin/class/:id" element={<ClassDetail/>} />
   </Routes>
   );
 }
