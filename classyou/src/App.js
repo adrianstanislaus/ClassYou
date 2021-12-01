@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import AdminDashboard from './pages/adminDashboard';
 import ClassAdd from './pages/classAdd';
 import ClassDetail from './pages/classDetail';

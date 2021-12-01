@@ -1,4 +1,4 @@
-import Cta_teacher from "./cta_teacher";
+import ActionTeacher from "./cta_teacher";
 import { Link } from "react-router-dom";
 
 export default function ClassCardTeacher(props){
@@ -9,8 +9,8 @@ export default function ClassCardTeacher(props){
     return(
         <li class="max-w-sm mx-auto bg-white border-2 border-black shadow-md overflow-hidden md:max-w-3xl lg:w-11/12 my-3 lg:mx-3">
             <div class="md:flex lg:block lg:flex-none">
-                <div class="md:flex-shrink-0 lg:flex-grow-0 border-b-2 border-black">
-                <img class="h-48 w-full object-cover md:h-full md:w-48 lg:h-48 lg:w-full" src={image} alt="class preview"/>
+                <div class="md:flex-shrink-0 bg-gray-300 lg:flex-grow-0 border-b-2 border-black">
+                <img class="h-48 w-full object-cover md:h-full md:w-48 lg:h-48 lg:w-full" src={image} alt="preview"/>
                 </div>
                 <div class="p-8">
                 <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{subject}</div>
@@ -21,7 +21,7 @@ export default function ClassCardTeacher(props){
                 <p class="mt-2 text-gray-500">Students: 30</p>
                 </div>
                 <div>
-                {props.user.teacher && <Cta_teacher
+                {props.user.teacher && <ActionTeacher
                     link={props.data?.meeting_link}
                     id={props.data?.id}
                     deleteClass={props.deleteClass}

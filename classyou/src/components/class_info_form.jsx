@@ -21,7 +21,6 @@ export default function ClassInfoForm(props){
     const [data, setData] = useState(startingData);
 
     let newErrorMessage = {};
-    let isInserted = {}
     const [errorMessage,setErrorMessage] = useState({
         valid: false,
         title : "",
@@ -194,15 +193,15 @@ export default function ClassInfoForm(props){
         }
     },);
     
+    const goToModules = () => {
+        navigate(`/admin/class/${props.data.id}/editmodules`)
+    }
     useEffect(()=>
     { console.log("[class added]",props.data)
-    if (props.data !== undefined){
-        isInserted = props.data
-        let direct = isInserted.id
-        navigate(`/admin/class/${direct}/editmodules`)
+    if (props.data ){
+        goToModules()
     }
-    console.log(isInserted?.id)
-    },[props.data])
+    })
 
     return(
         <form className="p-20 space-y-3" onSubmit={handleSubmit}>

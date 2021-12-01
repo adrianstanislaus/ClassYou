@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Modal from './modal';
 
-export default function Cta_teacher(props){
+export default function ActionTeacher(props){
     const navigate = useNavigate()
     function meetClicked(){
         window.open(props.link, "_blank") //to open new page
