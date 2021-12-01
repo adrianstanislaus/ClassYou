@@ -24,19 +24,14 @@ export default function User(props){
 
     return(
         <user className="col-span-1">
-            {props.isLogedIn? 
-            (<GoogleLogout
-                clientId={clientId}
-                buttonText="Sign Out"
-                onLogoutSuccess={onSuccessLogout}
-                />):(<GoogleLogin
+            <GoogleLogin
                     clientId={clientId}
                     buttonText="Sign In"
                     onSuccess={onSuccess}
                     onFailure={onFailure}
                     cookiePolicy={'single_host_origin'}
                     isSignedIn={true}
-                    />) }
+                    />
         </user>
     );
 }
