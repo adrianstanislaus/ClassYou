@@ -9,7 +9,7 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client"
-import { Auth0Provider, auth0Provider} from '@auth0/auth0-react'
+import { Auth0Provider } from '@auth0/auth0-react'
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId= process.env.REACT_APP_AUTH0_CLIENT_ID;
@@ -26,7 +26,7 @@ ReactDOM.render(
     <Auth0Provider
     domain={domain}
     clientId={clientId}
-    redirectUri={windows.location.origin}
+    redirectUri={window.location.origin}
     >
     <ApolloProvider client={client}>
     <BrowserRouter>

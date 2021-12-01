@@ -204,7 +204,7 @@ export default function ClassInfoForm(props){
     })
 
     return(
-        <form className="p-20 space-y-3" onSubmit={handleSubmit}>
+        <form className="px-10 py-20 lg:px-80 space-y-3" onSubmit={handleSubmit}>
             <div>
                 <h2 className="text-lg font-semibold font-spacemono">Class Info</h2>
             </div>
