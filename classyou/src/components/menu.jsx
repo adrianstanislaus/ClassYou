@@ -37,7 +37,7 @@ export default function Menu(props){
           <input className="flex w-11/12 px-2 rounded-3xl focus-within:outline-none" type="text" value={input} onChange={onChange}/>
           <button type="submit" className="flex justify-self-end bg-black text-white px-2 py-1 rounded-2xl">Search</button>
         </form>
-        <div className="rounded-3xl border-yellow-300 px-2 font-spacemono pt-2 mx-2 hover:bg-white hover:">
+        <div className="hidden md:block rounded-3xl border-yellow-300 px-2 font-spacemono pt-2 mx-2 hover:bg-white hover:">
         <Link to="/explore">Explore</Link>
         </div>
       </menu>
